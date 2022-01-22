@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
 
-const indexPage = () => (
-    <div>
-        <h1>The main page</h1>
-        <p>Go To <Link href='/auth'>Auth</Link></p>
-    </div>
-);
+class IndexPage extends Component {
 
-export default indexPage;
+    static getInitialProps(context) {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ appName: 'NextJs App - Main Page' });
+            }, 3000);
+        });
+        return promise;
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>{this.props.appName}</h1>
+                <p>Go to<Link href='/auth'>Auth</Link></p>
+            </div>
+        );
+    }
+}
+
+export default IndexPage;

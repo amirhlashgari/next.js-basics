@@ -15,7 +15,7 @@ function EventItem(props) {
 
     return (
         <li className={classes.item}>
-            <Image src={`/${image}`} alt={title} height={400} width={800} />
+            <Image src={`/${image}`} alt={title} height={600} width={1000} />
             <div className={classes.content}>
                 <div className={classes.summary}>
                     <h2>{title}</h2>
@@ -31,7 +31,7 @@ function EventItem(props) {
                 <div className={classes.actions}>
                     <Button link={exploreLink}>
                         <span>Explore Event</span>
-                        <span><ArrowRightIcon /></span>
+                        <span className={classes.icon}><ArrowRightIcon /></span>
                     </Button>
                 </div>
             </div>
